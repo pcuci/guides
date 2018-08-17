@@ -2,7 +2,7 @@
 
 There are 4 ansible variables that should be set when installing CRI-O
 
-
+#### 3.9
 ```
 #CRI-O variables
 openshift_use_crio=true
@@ -23,7 +23,7 @@ And node labels are required
 
 
 
-for 3.10
+####  3.10
 
 ```
 #CRI-O variables
