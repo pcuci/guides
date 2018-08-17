@@ -96,6 +96,9 @@ One intersting option
 dm.directlvm_device_force=false    Not sure if we want that but seems to me can be used to "clean up" crio storage if set to true. Please see documentation.  
 
 
+Please see files dir for my inventory  
+
+
 
 
 
