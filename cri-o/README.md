@@ -102,4 +102,9 @@ Please see files dir for my inventory
 
 
 
+#### Mixed CRI-O / Docker cluster
+
+See inventory in files directory. This is possible with custom node-config  
+
+
  
