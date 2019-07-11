@@ -1,0 +1,47 @@
+$TTL 1W
+@	IN	SOA	ns1.example.com.	root (
+			2019070700	; serial
+			3H		; refresh (3 hours)
+			30M		; retry (30 minutes)
+			2W		; expiry (2 weeks)
+			1W )		; minimum (1 week)
+	IN	NS	ns1.example.com.
+	IN	MX 10	smtp.example.com.
+;
+; 
+ns1	IN	A	192.168.1.5
+smtp	IN	A	192.168.1.5
+;
+helper	IN	A	192.168.1.5
+helper.ocp4	IN	A	192.168.1.5
+;
+; The api points to the IP of your load balancer
+api.ocp4		IN	A	192.168.1.5
+api-int.ocp4		IN	A	192.168.1.5
+;
+; The wildcard also points to the load balancer
+*.apps.ocp4		IN	A	192.168.1.5
+;
+; Create entry for the bootstrap host
+bootstrap.ocp4	IN	A	192.168.1.96
+;
+; Create entries for the master hosts
+master0.ocp4		IN	A	192.168.1.97
+master1.ocp4		IN	A	192.168.1.98
+master2.ocp4		IN	A	192.168.1.99
+;
+; Create entries for the worker hosts
+worker0.ocp4		IN	A	192.168.1.11
+worker1.ocp4		IN	A	192.168.1.7
+;
+; The ETCd cluster lives on the masters...so point these to the IP of the masters
+etcd-0.ocp4	IN	A	192.168.1.97
+etcd-1.ocp4	IN	A	192.168.1.98
+etcd-2.ocp4	IN	A	192.168.1.99
+;
+; The SRV records are IMPORTANT....make sure you get these right...note the trailing dot at the end...
+_etcd-server-ssl._tcp.ocp4	IN	SRV	0 10 2380 etcd-0.ocp4.example.com.
+_etcd-server-ssl._tcp.ocp4	IN	SRV	0 10 2380 etcd-1.ocp4.example.com.
+_etcd-server-ssl._tcp.ocp4	IN	SRV	0 10 2380 etcd-2.ocp4.example.com.
+;
+;EOF
