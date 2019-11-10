@@ -1,23 +1,23 @@
 $TTL 1W
-@	IN	SOA	ns1.example.com.	root (
-			2019070700	; serial
-			3H		; refresh (3 hours)
-			30M		; retry (30 minutes)
-			2W		; expiry (2 weeks)
-			1W )		; minimum (1 week)
-	IN	NS	ns1.example.com.
+@    IN  SOA  ns1.enfluence.io.  root (
+       2019070700  ; serial
+       3H    ; refresh (3 hours)
+       30M    ; retry (30 minutes)
+       2W    ; expiry (2 weeks)
+       1W )    ; minimum (1 week)
+     IN  NS  ns1.enfluence.io.
 ;
 ; syntax is "last octet" and the host must have fqdn with trailing dot
-97	IN	PTR	master0.ocp4.example.com.
-98	IN	PTR	master1.ocp4.example.com.
-99	IN	PTR	master2.ocp4.example.com.
+100  IN  PTR  master0.apps.enfluence.io.
+101  IN  PTR  master1.apps.enfluence.io.
+102  IN  PTR  master2.apps.enfluence.io.
 ;
-96	IN	PTR	bootstrap.ocp4.example.com.
+112  IN  PTR  bootstrap.apps.enfluence.io.
 ;
-5	IN	PTR	api.ocp4.ocp4.example.com.
-5	IN	PTR	api-int.ocp4.ocp4.example.com.
+120  IN  PTR  api.apps.apps.enfluence.io.
+120  IN  PTR  api-int.apps.apps.enfluence.io.
 ;
-11	IN	PTR	worker0.ocp4.example.com.
-7	IN	PTR	worker1.ocp4.example.com.
+115  IN  PTR  worker0.apps.enfluence.io.
+131  IN  PTR  worker1.apps.enfluence.io.
 ;
 ;EOF
